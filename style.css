@@ -9,7 +9,7 @@
 }
 
 /* Estilos do corpo */
-body {
+body, html {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
   min-height: 100vh;
