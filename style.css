@@ -17,7 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  overflow-x: hidden; /* Evita a rolagem horizontal */
+  overflow-y: hidden; /* Evita a rolagem horizontal */
 }
 
 /* Container principal */
