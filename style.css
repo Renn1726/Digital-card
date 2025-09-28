@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-/* Estilos do corpo */
+/* Estilos do corpo - CORRIGIDO */
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
@@ -16,15 +16,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  overflow-y: hidden; /* Evita a rolagem horizontal */
+  /* O padding: 20px; FOI REMOVIDO para evitar o bug de rolagem no iOS/Mobile. */
 }
 
-/* Container principal */
+/* Container principal - CORRIGIDO */
 .container {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  /* O padding foi movido para cá para garantir o 'respiro' nas bordas. */
+  padding: 20px 15px; /* 20px no topo/base, 15px nas laterais */
 }
 
 /* Cartão principal */
@@ -172,6 +173,7 @@ body {
 @media (min-width: 768px) {
   .container {
     max-width: 450px;
+    padding: 0; /* No desktop, o padding não é necessário, o margin resolve */
   }
 
   .card {
@@ -204,8 +206,9 @@ body {
 
 /* Responsividade para telas pequenas */
 @media (max-width: 480px) {
+  /* O padding foi removido daqui e colocado no .container */
   body {
-    padding: 10px;
+    /* padding: 10px; - REMOVIDO */ 
   }
 
   .card {
