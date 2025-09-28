@@ -7,21 +7,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* style.css - Adicione esta regra ao topo */
+html {
+    height: 100%; /* Garante que o html ocupe 100% da altura do navegador */
+}
 
-/* Estilos do corpo - CORRIGIDO */
-/* style.css - Estilos do corpo */
+/* style.css - Modifique o bloco body */
 body {
   font-family: "Poppins", sans-serif;
+  
+  /* MOVA O GRADIENTE PARA O HTML (OU MANTENHA AQUI, MAS ADICIONE O 'height: 100%'): */
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
   
-  /* NOVAS LINHAS PARA CORRIGIR O BUG DO MOBILE: */
-  min-height: 100vh; /* Fallback para navegadores antigos */
-  min-height: 100dvh; /* Altura da viewport dinâmica (melhor para iOS) */
-  height: 100%; /* Garante que o body preencha a área */
+  /* REMOVA TODAS AS PROPRIEDADES DE min-height: 100vh/dvh.
+     Substitua por 'height: 100%' e uma linha de segurança para navegadores móveis: */
+  height: 100%; 
   
+  /* ESTA É A LINHA DE SEGURANÇA FINAL PARA O SAFARI */
+  /* Remove o limite de altura para garantir que ele cubra a tela */
+  max-height: unset; 
+  
+  /* O resto do flexbox fica igual */
   display: flex;
   align-items: center;
   justify-content: center;
+  /* padding: 20px; (Removido na correção anterior) */
 }
 
 /* Container principal - CORRIGIDO */
