@@ -7,40 +7,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* style.css - Adicione esta regra ao topo */
-html {
-    height: 100%; /* Garante que o html ocupe 100% da altura do navegador */
-}
 
-/* style.css - Modifique o bloco body */
+/* Estilos do corpo */
 body {
   font-family: "Poppins", sans-serif;
-  
-  /* MOVA O GRADIENTE PARA O HTML (OU MANTENHA AQUI, MAS ADICIONE O 'height: 100%'): */
+  min-height: 100vh;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
-  
-  /* REMOVA TODAS AS PROPRIEDADES DE min-height: 100vh/dvh.
-     Substitua por 'height: 100%' e uma linha de segurança para navegadores móveis: */
-  height: 100%; 
-  
-  /* ESTA É A LINHA DE SEGURANÇA FINAL PARA O SAFARI */
-  /* Remove o limite de altura para garantir que ele cubra a tela */
-  max-height: unset; 
-  
-  /* O resto do flexbox fica igual */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 20px; (Removido na correção anterior) */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Container principal - CORRIGIDO */
+/* Garanta que html e body ocupem 100% da altura */
+html,
+body {
+  height: 100%;
+}
+
+/* Container principal */
 .container {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  /* O padding foi movido para cá para garantir o 'respiro' nas bordas. */
-  padding: 20px 15px; /* 20px no topo/base, 15px nas laterais */
 }
 
 /* Cartão principal */
@@ -188,7 +175,6 @@ body {
 @media (min-width: 768px) {
   .container {
     max-width: 450px;
-    padding: 0; /* No desktop, o padding não é necessário, o margin resolve */
   }
 
   .card {
@@ -221,9 +207,8 @@ body {
 
 /* Responsividade para telas pequenas */
 @media (max-width: 480px) {
-  /* O padding foi removido daqui e colocado no .container */
   body {
-    /* padding: 10px; - REMOVIDO */ 
+    padding: 10px;
   }
 
   .card {
