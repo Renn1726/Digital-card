@@ -9,14 +9,21 @@
 }
 
 /* Estilos do corpo */
-body, html {
+body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  margin: 0;
+}
+
+/* No desktop, adiciona respiro */
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
 }
 
 /* Container principal */
