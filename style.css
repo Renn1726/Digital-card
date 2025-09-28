@@ -8,29 +8,30 @@
   box-sizing: border-box;
 }
 
-/* Fundo no html para cobrir toda a tela, inclusive safe-area */
+/* Estilos do corpo */
 html {
   min-height: 100vh;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
+  /* Safe-area para iOS */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Estilos do corpo */
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent; /* fundo já está no html */
-  /* Safe-area para iOS */
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  background: transparent;
   width: 100vw;
   box-sizing: border-box;
-  overflow-y: auto; /* permite rolagem se necessário */
+  overflow-y: auto;
+  /* padding lateral só via media queries */
+  padding: 0;
 }
 
-/* Padding de 20px em desktops */
+/* Padding lateral em desktop */
 @media (min-width: 768px) {
   body {
     padding-left: 20px;
@@ -38,7 +39,7 @@ body {
   }
 }
 
-/* Padding menor em telas pequenas */
+/* Padding lateral em mobile */
 @media (max-width: 480px) {
   body {
     padding-left: 10px;
