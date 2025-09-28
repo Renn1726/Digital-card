@@ -10,11 +10,22 @@
 
 /* Estilos do corpo */
 body {
-  font-family: "Poppins", sans-serif;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   min-height: 100vh;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+  overflow-y: auto;
+}
+
+/* Corrige fundo no iOS e adiciona padding em desktop */
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
 }
 
 /* Garanta que html e body ocupem 100% da altura */
