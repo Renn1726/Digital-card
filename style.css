@@ -8,32 +8,42 @@
   box-sizing: border-box;
 }
 
-/* Estilos do corpo */
+/* Fundo no html para cobrir toda a tela, inclusive safe-area */
 html {
   min-height: 100vh;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
-  /* Safe area para iOS */
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* Estilos do corpo */
 body {
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  background: transparent;
-  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* fundo já está no html */
+  /* Safe-area para iOS */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-y: auto; /* permite rolagem se necessário */
 }
 
 /* Padding de 20px em desktops */
 @media (min-width: 768px) {
   body {
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
-/* Garanta que html e body ocupem 100% da altura */
-html,
-body {
-  height: 100%;
+/* Padding menor em telas pequenas */
+@media (max-width: 480px) {
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* Container principal */
