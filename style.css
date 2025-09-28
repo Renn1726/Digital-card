@@ -9,14 +9,19 @@
 }
 
 /* Estilos do corpo - CORRIGIDO */
+/* style.css - Estilos do corpo */
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
-  min-height: 100vh;
+  
+  /* NOVAS LINHAS PARA CORRIGIR O BUG DO MOBILE: */
+  min-height: 100vh; /* Fallback para navegadores antigos */
+  min-height: 100dvh; /* Altura da viewport dinâmica (melhor para iOS) */
+  height: 100%; /* Garante que o body preencha a área */
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  /* O padding: 20px; FOI REMOVIDO para evitar o bug de rolagem no iOS/Mobile. */
 }
 
 /* Container principal - CORRIGIDO */
