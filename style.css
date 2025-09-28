@@ -9,19 +9,21 @@
 }
 
 /* Estilos do corpo */
-body {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+html {
   min-height: 100vh;
   background: linear-gradient(135deg, #4285f4 0%, #1e3c72 100%);
+  /* Safe area para iOS */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
   overflow-y: auto;
 }
 
-/* Corrige fundo no iOS e adiciona padding em desktop */
+/* Padding de 20px em desktops */
 @media (min-width: 768px) {
   body {
     padding: 20px;
